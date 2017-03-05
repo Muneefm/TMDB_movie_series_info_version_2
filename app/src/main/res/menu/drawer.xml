@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group
+        android:id="@+id/header"
+        android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/movieItem"
+            android:checked="false"
+            android:icon="@mipmap/ic_movie"
+            android:title="Movies"/>
+
+        <item
+            android:id="@+id/seriesItem"
+            android:checked="false"
+            android:icon="@mipmap/ic_series"
+            android:title="Series" />
+
+        <item
+            android:id="@+id/searchItem"
+            android:checked="false"
+            android:icon="@mipmap/ic_search_glass"
+
+            android:title="Search" />
+
+
+      <!--  <item
+            android:id="@+id/trash"
+            android:checked="false"
+            android:icon="@drawable/ic_drawer"
+            android:title="test"/>-->
+
+<!--
+        <item
+            android:id="@+id/spam"
+            android:checked="false"
+            android:icon="@drawable/ic_drawer"
+            android:title="Seventh" />
+-->
+    </group>
+
+
+   <!-- <group
+        android:id="@+id/acount_group"
+        android:checkableBehavior="single"
+        >
+        <item android:title="Account Settings">
+
+        <item
+            android:id="@+id/signIn"
+            android:checked="false"
+            android:icon="@mipmap/ic_user"
+
+            android:title="Sign In" />
+    </item>
+
+    </group>
+ -->
+
+</menu>

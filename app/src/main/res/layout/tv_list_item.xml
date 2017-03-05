@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="wrap_content">
+
+
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        card_view:cardElevation="2dp"
+        android:elevation="2dp"
+        card_view:cardUseCompatPadding="true"
+        card_view:cardCornerRadius="0dp"
+        android:id="@+id/tvcard">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="190dp"
+            android:scaleType="centerCrop"
+            android:id="@+id/tvPoster"
+            />
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="The Big Bang Theory"
+            android:layout_marginTop="3dp"
+            android:gravity="center"
+            android:layout_marginLeft="3dp"
+            android:textColor="@color/black"
+            android:fontFamily="sans-serif-condensed"
+
+            android:layout_below="@+id/tvPoster"
+            android:textSize="10dp"
+            android:id="@+id/tvTitle"
+            />
+<RatingBar
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    style="?android:attr/ratingBarStyleSmall"
+    android:clickable="false"
+    android:numStars="5"
+    android:layout_centerHorizontal="true"
+    android:id="@+id/tvRate"
+    android:layout_marginBottom="3dp"
+    android:layout_marginLeft="3dp"
+    android:layout_marginTop="3dp"
+    android:layout_below="@+id/tvTitle"
+    />
+        </RelativeLayout>
+        </android.support.v7.widget.CardView>
+    
+</RelativeLayout>

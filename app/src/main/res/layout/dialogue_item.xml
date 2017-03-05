@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <ImageView
+    android:layout_width="50dp"
+    android:layout_alignParentLeft="true"
+    android:scaleType="fitXY"
+    android:adjustViewBounds="true"
+    android:layout_alignParentTop="true"
+    android:layout_height="80dp"
+    android:id="@+id/posterdia"
+    android:layout_marginRight="15dp"
+
+    />
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_toRightOf="@+id/posterdia"
+    android:layout_marginLeft="10dp"
+    android:layout_centerVertical="true"
+
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Season: "
+        android:fontFamily="sans-serif-condensed"
+
+        android:id="@+id/seasonTag"
+        />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5"
+        android:layout_marginLeft="4dp"
+        android:id="@+id/seasonCountDia"
+        android:layout_toRightOf="@+id/episoDiaTag"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="Air Date: "
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seasonTag"
+        android:layout_marginTop="4dp"
+        android:fontFamily="sans-serif-condensed"
+        android:id="@+id/dateTagDia"
+        />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:text="tag"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/seasonTag"
+        android:id="@+id/datediaair"
+        android:layout_marginTop="4dp"
+
+        android:layout_marginLeft="4dp"
+        android:layout_toRightOf="@+id/episoDiaTag"
+        />
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="4dp"
+
+    android:id="@+id/episoDiaTag"
+    android:fontFamily="sans-serif-condensed"
+    android:text="Episodes: "
+    android:layout_below="@+id/dateTagDia"
+    />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/episoDiaTag"
+        android:text="25"
+        android:layout_marginTop="4dp"
+android:id="@+id/episodeCountDia"
+        android:layout_marginLeft="4dp"
+        android:layout_below="@+id/dateTagDia"
+
+        />
+
+
+</RelativeLayout>
+</RelativeLayout>

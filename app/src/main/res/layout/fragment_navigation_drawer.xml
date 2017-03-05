@@ -1,0 +1,141 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:ripple="http://schemas.android.com/apk/res-auto"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context="moviez.mnf.com.movie.Fragments.NavigationDrawerFragment">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:layout_alignParentTop="true"
+        android:clickable="true"
+        android:id="@+id/viewMain"
+        android:background="@color/teal500"
+        android:elevation="10dp"
+
+        >
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/viewImage"
+        android:elevation="10dp"
+        android:src="@drawable/movie"
+        android:layout_alignParentTop="true"
+        android:scaleType="center"
+        />
+</RelativeLayout>
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_below="@+id/viewMain"
+    android:layout_height="wrap_content">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/scrco"
+        android:layout_height="match_parent">
+
+
+
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:id="@+id/searchRel"
+            android:clickable="true"
+
+            android:layout_height="wrap_content">
+
+
+            <ImageView
+                android:layout_width="24dp"
+                android:gravity="center"
+                android:src="@drawable/magnifyingglass"
+                android:layout_marginLeft="20dp"
+                android:layout_centerVertical="true"
+                android:layout_height="24dp" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Search"
+                android:id="@+id/searchrell"
+                android:elevation="10dp"
+                android:fontFamily="sans-serif-light"
+                android:textSize="24dp"
+                android:gravity="center"
+                android:padding="9dp"
+
+                />
+
+        </RelativeLayout>
+
+
+    <RelativeLayout
+    android:layout_width="match_parent"
+    android:layout_below="@+id/searchRel"
+android:id="@+id/movierel"
+    android:clickable="true"
+
+    android:layout_height="wrap_content">
+
+
+        <ImageView
+            android:layout_width="24dp"
+            android:gravity="center"
+            android:src="@drawable/clapboard"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:layout_height="24dp" />
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Movies"
+        android:id="@+id/moviesSel"
+        android:elevation="10dp"
+        android:fontFamily="sans-serif-light"
+        android:textSize="24dp"
+        android:gravity="center"
+        android:padding="9dp"
+
+        />
+
+</RelativeLayout>
+
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_below="@+id/movierel"
+        android:clickable="true"
+
+        android:id="@+id/reltv"
+        android:layout_height="wrap_content">
+        <ImageView
+            android:layout_width="24dp"
+            android:gravity="center"
+            android:src="@drawable/tv"
+            android:layout_marginLeft="20dp"
+            android:layout_centerVertical="true"
+            android:layout_height="24dp" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TV Series"
+
+            android:elevation="10dp"
+            android:fontFamily="sans-serif-light"
+            android:textSize="24dp"
+            android:gravity="center"
+            android:padding="9dp"
+
+            />
+
+    </RelativeLayout>
+    </RelativeLayout>
+
+</ScrollView>
+
+</RelativeLayout>

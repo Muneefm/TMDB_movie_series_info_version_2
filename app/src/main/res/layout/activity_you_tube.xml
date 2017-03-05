@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:background="@android:color/transparent"
+
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:background="@android:color/transparent"
+        android:layout_height="wrap_content"
+        android:id="@+id/videoCard">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:gravity="center"
+    android:layout_height="match_parent">
+        <com.google.android.youtube.player.YouTubePlayerView
+            android:id="@+id/youtube_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@android:color/transparent"
+            />
+        <fr.castorflex.android.circularprogressbar.CircularProgressBar
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/smoothCirVid"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:indeterminate="true"
+            app:cpb_colors="@array/colorsSmooth"
+            app:cpb_rotation_speed="2.0"
+            app:cpb_sweep_speed="1.0"
+            app:cpb_min_sweep_angle="10"
+            app:cpb_max_sweep_angle="300"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            />
+</RelativeLayout>
+    </android.support.v7.widget.CardView>
+</RelativeLayout>

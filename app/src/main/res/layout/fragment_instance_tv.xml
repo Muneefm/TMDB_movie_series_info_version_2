@@ -1,0 +1,62 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:wheel="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="moviez.mnf.com.movie.Fragments.FragmentInstance">
+
+    <!-- TODO: Update blank fragment layout -->
+
+
+    <!-- <com.github.ksoichiro.android.observablescrollview.ObservableListView
+         android:layout_width="match_parent"
+         android:id="@+id/movieList"
+         android:dividerHeight="-1dp"
+
+         android:layout_height="match_parent"/>-->
+
+    <com.github.ksoichiro.android.observablescrollview.ObservableRecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/tvlist"
+        android:padding="1dp"
+        android:layout_centerHorizontal="true"
+        android:columnWidth="@dimen/column_width"
+        android:clipToPadding="false"
+        android:scrollbars="vertical"
+        android:layout_height="match_parent"/>
+
+    <!--<ListView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        </ListView>
+    -->
+
+   <!-- <com.pnikosis.materialishprogress.ProgressWheel
+        android:id="@+id/protv"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        wheel:barColor="@color/pureRed"
+        wheel:progressIndeterminate="true"
+        android:layout_gravity="center_horizontal|bottom"
+
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true" />-->
+    <fr.castorflex.android.circularprogressbar.CircularProgressBar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/smothCirTv"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:indeterminate="true"
+        app:cpb_colors="@array/colorsSmooth"
+        android:visibility="gone"
+        app:cpb_rotation_speed="2.0"
+        app:cpb_sweep_speed="1.0"
+        app:cpb_min_sweep_angle="10"
+        app:cpb_max_sweep_angle="300"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        />
+
+</RelativeLayout>

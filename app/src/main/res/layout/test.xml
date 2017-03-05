@@ -1,0 +1,485 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:wheel="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:id="@+id/contkk"
+    android:layout_height="match_parent">
+
+    <com.github.ksoichiro.android.observablescrollview.ObservableScrollView
+        android:id="@+id/scroll"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/image"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/parallax_image_height"
+                android:scaleType="centerCrop"
+                android:background="@color/teal"
+                />
+
+            <View
+                android:id="@+id/anchor"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/parallax_image_height"
+                android:minHeight="@dimen/parallax_image_height" />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:textSize="20dp"
+                android:id="@+id/nameT"
+                android:layout_alignBottom="@+id/image"
+                android:fontFamily="sans-serif-condensed"
+
+                android:gravity="center"
+                android:paddingTop="10dp"
+                android:textColor="@color/white"
+                android:background="@drawable/trans"
+                android:paddingBottom="10dp"
+                />
+
+            <com.pnikosis.materialishprogress.ProgressWheel
+                android:id="@+id/progress_wheel"
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                wheel:barColor="@color/pureRed"
+                wheel:progressIndeterminate="true"
+                android:layout_gravity="center_horizontal|bottom"
+
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/mainCont"
+                android:background="@color/white"
+                android:layout_below="@+id/anchor"
+
+                >
+
+                <!--     <TextView
+                         android:layout_width="match_parent"
+                         android:layout_height="wrap_content"
+                         android:text="Avengers: Age of Ultron"
+                         android:textSize="20dp"
+                         android:id="@+id/nameT"
+                         android:fontFamily="sans-serif-condensed"
+
+                         android:gravity="center"
+                          android:paddingTop="10dp"
+                         android:textColor="@color/white"
+                         android:background="@drawable/trans"
+                         android:paddingBottom="10dp"
+
+                         />-->
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tag"
+                    android:paddingTop="5dp"
+                    android:fontFamily="sans-serif-condensed"
+                    android:textColor="@color/white"
+                    android:paddingBottom="5dp"
+                    android:background="@color/blue500"
+                    android:gravity="center"
+                    android:text=""
+                    />
+                <ImageView
+                    android:layout_width="140dp"
+                    android:layout_height="190dp"
+                    android:layout_below="@+id/tag"
+                    android:layout_marginLeft="15dp"
+                    android:scaleType="fitXY"
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/posterIm"
+                    />
+                <RelativeLayout
+                    android:layout_width="wrap_content"
+                    android:id="@+id/conti"
+                    android:layout_toRightOf="@+id/posterIm"
+                    android:layout_below="@+id/tag"
+                    android:layout_marginTop="50dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginLeft="10dp"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:id="@+id/satr"
+                        android:layout_centerHorizontal="true"
+                        android:src="@drawable/stryy"
+
+                        />
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/rate"
+                        android:layout_below="@+id/satr"
+                        android:textSize="17dp"
+                        android:textColor="@color/black"
+                        android:layout_centerHorizontal="true"
+
+                        android:text=""
+                        android:layout_marginTop="10dp"
+
+                        />
+                    <Button
+                        android:layout_width="wrap_content"
+                        android:layout_height="35dp"
+                        android:id="@+id/showVideo"
+                        android:layout_below="@+id/rate"
+                        android:layout_marginTop="18dp"
+                        android:gravity="center"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginRight="20dp"
+                        style="@style/TertiaryButton"
+                        android:text="Watch Video"
+                        />
+                </RelativeLayout>
+
+
+
+
+
+                <TextView
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="5dp"
+                    android:textColor="@color/bluea700"
+                    android:gravity="center"
+                    android:id="@+id/gener"
+                    android:layout_below="@id/posterIm"
+
+                    />
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:background="@color/gray500"
+                    android:id="@+id/dividerone"
+
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_marginBottom="15dp"
+                    android:layout_below="@id/gener"
+                    />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_margin="10dp"
+                    android:id="@+id/descCont"
+                    android:padding="7dp"
+                    android:background="@drawable/backdesc"
+                    android:layout_below="@id/dividerone"
+                    android:layout_height="wrap_content">
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Description"
+                        android:textColor="@color/blue500"
+                        android:layout_marginLeft="10dp"
+                        android:id="@+id/desc"
+                        />
+
+                    <TextView
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/desc"
+                        android:padding="9dp"
+                        android:textColor="@color/black"
+                        android:fontFamily="sans-serif-"
+
+                        android:id="@+id/descrip"
+                        />
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:background="@color/gray500"
+                    android:id="@+id/dividetwo"
+                    android:layout_marginLeft="25dp"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginRight="25dp"
+                    android:layout_below="@id/descCont"
+                    />
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Movie Photos"
+
+                    android:gravity="center"
+                    android:layout_marginTop="20dp"
+                    android:textColor="@color/blue500"
+                    android:id="@+id/foto"
+                    android:textStyle="bold"
+                    android:layout_below="@id/dividetwo"
+                    />
+                <android.support.v7.widget.RecyclerView
+
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/foto"
+                    android:id="@+id/rec"
+                    android:background="@color/splashbg"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="15dp"
+                    android:layout_height="210dp"/>
+
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/rec"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/detCont"
+
+
+                    >
+
+
+
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Movie Info"
+                        android:layout_marginTop="20dp"
+                        android:gravity="center"
+                        android:textStyle="bold"
+                        android:id="@+id/inf"
+                        android:textColor="@color/blue500"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/status"
+                        android:text="Status:"
+                        android:paddingTop="15dp"
+                        android:layout_marginLeft="8dp"
+                        android:textStyle="bold"
+                        android:textColor="@color/blue500"
+                        android:layout_below="@id/inf"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:paddingTop="5dp"
+                        android:layout_marginLeft="8dp"
+                        android:textColor="@color/black"
+
+                        android:id="@+id/statusa"
+                        android:layout_below="@+id/status"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/dater"
+                        android:text="Release Date:"
+                        android:paddingTop="9dp"
+                        android:layout_marginLeft="8dp"
+                        android:textStyle="bold"
+
+                        android:textColor="@color/blue500"
+                        android:layout_below="@id/statusa"
+
+                        />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:paddingTop="5dp"
+                        android:layout_marginLeft="8dp"
+                        android:textColor="@color/black"
+
+                        android:id="@+id/releaseDate"
+                        android:layout_below="@+id/dater"
+
+                        />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/lant"
+                        android:text="Language:"
+                        android:paddingTop="9dp"
+                        android:layout_marginLeft="8dp"
+                        android:textStyle="bold"
+
+                        android:textColor="@color/blue500"
+                        android:layout_below="@id/releaseDate"
+
+                        />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:paddingTop="5dp"
+                        android:layout_marginLeft="8dp"
+                        android:textColor="@color/black"
+
+                        android:id="@+id/language"
+                        android:layout_below="@+id/lant"
+
+                        />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/budt"
+                        android:text="Budget:"
+                        android:paddingTop="9dp"
+                        android:layout_marginLeft="8dp"
+                        android:textStyle="bold"
+
+                        android:textColor="@color/blue500"
+                        android:layout_below="@id/language"
+
+                        />
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text=""
+                        android:paddingTop="5dp"
+                        android:layout_marginLeft="8dp"
+                        android:textColor="@color/black"
+
+                        android:id="@+id/budget"
+                        android:layout_below="@+id/budt"
+
+                        />
+
+
+                </RelativeLayout>
+
+
+
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:id="@+id/showReview"
+                    android:layout_below="@+id/detCont"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="20dp"
+                    style="@style/TertiaryButton"
+                    android:text="Show Review"
+                    />
+                <Button
+                    android:layout_width="wrap_content"
+                    android:layout_height="35dp"
+                    android:id="@+id/showSimilar"
+                    android:layout_below="@+id/detCont"
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginRight="20dp"
+                    style="@style/TertiaryButton"
+                    android:text="Show Similar Movie"
+                    />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Movie Cast"
+                    android:layout_marginTop="20dp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:id="@+id/tagCrew"
+                    android:textColor="@color/blue500"
+                    android:layout_below="@id/showReview"
+                     />
+                <android.support.v7.widget.RecyclerView
+
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/tagCrew"
+                    android:id="@+id/castRec"
+
+                    android:layout_alignParentLeft="true"
+                    android:layout_marginTop="20dp"
+                    android:layout_height="220dp"/>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_below="@+id/castRec"
+                    android:layout_marginTop="20dp"
+                    android:layout_alignParentBottom="true"
+                    android:background="@color/switch_thumb_normal_material_dark"
+                    android:layout_height="48dp">
+                    <com.gc.materialdesign.views.ButtonFlat
+                        android:layout_width="match_parent"
+                        android:layout_height="35dp"
+                        android:text="Visit Movie Home Page"
+                        android:textColor="@color/blue500"
+                        android:id="@+id/visit"
+                        />
+
+
+                </RelativeLayout>
+
+
+                <!--  <TextView
+                      android:id="@+id/body"
+                      android:layout_width="match_parent"
+
+                      android:layout_height="wrap_content"
+                      android:layout_below="@id/castRec"
+                      android:layout_marginTop="30dp"
+                      android:background="@android:color/white"
+                      android:paddingBottom="@dimen/activity_vertical_margin"
+                      android:paddingLeft="@dimen/activity_horizontal_margin"
+                      android:paddingRight="@dimen/activity_horizontal_margin"
+                      android:paddingTop="@dimen/activity_vertical_margin"
+                      android:text="@string/lipsum" />-->
+
+            </RelativeLayout>
+            <fr.castorflex.android.circularprogressbar.CircularProgressBar
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                android:id="@+id/smothCirMovieDet"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:indeterminate="true"
+                app:cpb_colors="@array/colorsSmooth"
+                app:cpb_rotation_speed="2.0"
+                app:cpb_sweep_speed="1.0"
+                app:cpb_min_sweep_angle="10"
+                app:cpb_max_sweep_angle="300"
+                android:layout_centerHorizontal="true"
+                android:layout_centerVertical="true"
+                />
+
+
+        </RelativeLayout>
+
+    </com.github.ksoichiro.android.observablescrollview.ObservableScrollView>
+
+    <include layout="@layout/gradient_header" />
+
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:popupTheme="@style/Theme.AppCompat.Light.DarkActionBar"
+        app:theme="@style/Toolbar" />
+
+
+
+</FrameLayout>

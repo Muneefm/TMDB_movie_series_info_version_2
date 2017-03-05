@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:wheel="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingTop="0dp"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="moviez.mnf.com.movie.Activity.ScrollingActivity"
+    tools:showIn="@layout/activity_scrolling">
+
+  <!--  <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/text_margin"
+        android:text="@string/large_text" />-->
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+   <!-- <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:id="@+id/namecast"
+        android:text=""
+        android:paddingLeft="150dp"
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="21dp"
+        />-->
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:id="@+id/mainRel"
+        android:paddingTop="60dp"
+        android:layout_height="match_parent">
+
+<!--        <android.support.v7.widget.CardView
+            android:layout_width="160dp"
+            android:layout_height="220dp"
+            custom:cardElevation="15dp"
+            card_view:cardElevation="15dp"
+            card_view:cardUseCompatPadding="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="10dp"
+            android:id="@+id/propick">
+         <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/imgpro"
+                android:scaleType="centerCrop"
+                />
+        </android.support.v7.widget.CardView> -->
+
+       <!-- <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:id="@+id/namecast"
+            android:text="test"
+            android:layout_marginTop="12dp"
+            android:fontFamily="sans-serif-condensed"
+            android:textSize="20dp"
+            />-->
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:cardElevation="1dp"
+            card_view:cardElevation="1dp"
+            app:contentPadding="5dp"
+            card_view:cardUseCompatPadding="true"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/propick">
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:id="@+id/primaryContainer"
+            android:layout_height="wrap_content">
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+                <TableRow>
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                android:text="Birthday: "
+                android:id="@+id/birthTag"
+                android:textColor="@color/blue500"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/birthTag"
+                android:text=""
+
+                android:textColor="@color/black"
+                android:id="@+id/birthday"
+                />
+                </TableRow>
+
+
+                <TableRow
+                    android:layout_marginTop="20dp"
+                    >
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Birth Place: "
+                android:visibility="visible"
+
+                android:id="@+id/tagplace"
+                android:layout_below="@+id/birthday"
+                android:textColor="@color/blue500"
+                />
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tagplace"
+                android:id="@+id/place"
+                android:text=""
+
+                android:textColor="@color/black"
+                />
+
+                </TableRow>
+
+                <TableRow
+                    android:layout_marginTop="20dp"
+                    >
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Popularity Score: "
+                        android:visibility="visible"
+
+                        android:id="@+id/tagpopu"
+                        android:layout_below="@+id/birthday"
+                        android:textColor="@color/blue500"
+                        />
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/tagplace"
+                        android:id="@+id/popula"
+                        android:text=""
+
+                        android:textColor="@color/black"
+                        />
+
+                </TableRow>
+            </TableLayout>
+        </RelativeLayout>
+</android.support.v7.widget.CardView>
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            custom:cardElevation="1dp"
+            card_view:cardElevation="1dp"
+            android:visibility="gone"
+            app:contentPadding="5dp"
+            android:layout_below="@+id/propick"
+            card_view:cardUseCompatPadding="true"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginLeft="5dp"
+            android:id="@+id/propickTwo">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/tagOvr"
+                android:visibility="visible"
+                android:text="About :"
+                android:textColor="@color/blue500"
+                />
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/tagOvr"
+                    android:text="tets :"
+
+                    android:id="@+id/ovr"
+                    />
+
+
+        </RelativeLayout>
+        </android.support.v7.widget.CardView>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Movies "
+            android:visibility="gone"
+
+            android:id="@+id/tagMovieRec"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/propickTwo"
+            android:textSize="16dp"
+            android:textColor="@color/grey700"
+            />
+
+
+        <android.support.v7.widget.RecyclerView
+
+            android:layout_width="match_parent"
+            android:layout_below="@+id/tagMovieRec"
+            android:id="@+id/cast_movie_rec"
+            android:visibility="gone"
+
+            android:background="@color/splashbg"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="15dp"
+            android:layout_height="200dp"/>
+
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="TV Series "
+            android:id="@+id/tagTvRec"
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="10dp"
+            android:layout_below="@+id/cast_movie_rec"
+            android:textSize="16dp"
+            android:textColor="@color/grey700"
+            />
+
+
+        <android.support.v7.widget.RecyclerView
+
+            android:layout_width="match_parent"
+            android:layout_below="@+id/tagTvRec"
+            android:id="@+id/castTvRec"
+            android:visibility="gone"
+            android:background="@color/splashbg"
+            android:layout_alignParentLeft="true"
+            android:layout_marginTop="15dp"
+            android:layout_height="200dp"/>
+
+
+        <fr.castorflex.android.circularprogressbar.CircularProgressBar
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:app="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/smothCirCast"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:visibility="gone"
+            android:indeterminate="true"
+            app:cpb_colors="@array/colorsSmooth"
+            app:cpb_rotation_speed="2.0"
+            app:cpb_sweep_speed="1.0"
+            app:cpb_min_sweep_angle="10"
+            app:cpb_max_sweep_angle="300"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            />
+    </RelativeLayout>
+    </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

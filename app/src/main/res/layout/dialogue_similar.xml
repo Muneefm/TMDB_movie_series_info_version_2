@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:textColor="@color/white"
+        android:text="Similar"
+        android:background="@color/teal"
+        android:fontFamily="sans-serif-condensed"
+
+        android:gravity="center"
+        android:textSize="20dp"
+        android:id="@+id/headSimi"
+        />
+
+
+    <com.github.ksoichiro.android.observablescrollview.ObservableRecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/similarRec"
+        android:layout_below="@+id/headSimi"
+        android:scrollbars="vertical"
+        android:layout_height="400dp"/>
+
+
+<TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_centerHorizontal="true"
+    android:visibility="gone"
+    android:id="@+id/noResSimilar"
+    android:layout_centerVertical="true"
+    android:text="No Result Found !"
+    android:textSize="20dp"
+    />
+
+    <fr.castorflex.android.circularprogressbar.CircularProgressBar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/smothCirSimi"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:visibility="gone"
+        android:indeterminate="true"
+        app:cpb_colors="@array/colorsSmooth"
+        app:cpb_rotation_speed="2.0"
+        app:cpb_sweep_speed="1.0"
+        app:cpb_min_sweep_angle="10"
+        app:cpb_max_sweep_angle="300"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        />
+
+
+</RelativeLayout>

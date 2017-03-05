@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="moviez.mnf.com.movie">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+    <application
+        android:name=".AppController"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:screenOrientation="portrait">
+
+        </activity>
+        <activity
+            android:theme="@style/AppThemeMovieDetail"
+            android:name=".Activity.MovieDetails"
+            android:label="@string/title_activity_movie_details"
+            android:parentActivityName=".MainActivity">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="moviez.mnf.com.movie.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Activity.ReviewsActivity"
+            android:label="@string/title_activity_reviews" />
+        <activity
+            android:name=".Activity.ImageViewActivity"
+            android:label="@string/title_activity_image_view" />
+        <activity
+            android:name=".Activity.TestActivity"
+            android:label="@string/title_activity_test" />
+        <activity
+            android:name=".Activity.SearchActivity"
+            android:label="@string/title_activity_search" />
+        <activity
+            android:name=".Activity.TvDetailActivity"
+            android:label="@string/title_activity_tv_detail"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppThemeMovieDetail">
+
+            <!-- Parent activity meta-data to support 4.0 and lower -->
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="moviez.mnf.com.movie.MainActivity" />
+        </activity>
+        <activity
+            android:name=".Activity.YouTubeActivity"
+            android:label="@string/title_activity_you_tube"
+            android:theme="@style/Theme.AppCompat.Dialog" />
+        <activity
+            android:name=".Activity.AuthenticationActivity"
+            android:label="@string/title_activity_authentication"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name=".Activity.ScrollingActivity"
+            android:label="@string/title_activity_scrolling"
+            android:theme="@style/AppThemeCast" />
+        <activity
+            android:name=".Activity.NewTabbedActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>

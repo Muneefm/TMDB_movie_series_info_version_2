@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:custom="http://schemas.android.com/apk/res-auto"
+    xmlns:wheel="http://schemas.android.com/tools"
+    xmlns:card_view="http://schemas.android.com/tools"
+
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:background="@color/white"
+    android:layout_height="match_parent">
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:id="@+id/mainRel"
+
+    android:layout_height="match_parent">
+
+    <android.support.v7.widget.CardView
+        android:layout_width="160dp"
+        android:layout_height="220dp"
+        custom:cardElevation="15dp"
+        card_view:cardElevation="15dp"
+        card_view:cardUseCompatPadding="true"
+        android:layout_marginRight="5dp"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/propick">
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/imgpro"
+            android:scaleType="centerCrop"
+            />
+    </android.support.v7.widget.CardView>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/propick"
+        android:layout_alignParentTop="true"
+        android:id="@+id/namecast"
+        android:text=""
+        android:layout_marginTop="12dp"
+        android:fontFamily="sans-serif-condensed"
+        android:textSize="20dp"
+
+
+        />
+
+   <RelativeLayout
+       android:layout_width="wrap_content"
+       android:layout_toRightOf="@+id/propick"
+       android:layout_marginTop="60dp"
+       android:layout_height="wrap_content">
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:visibility="gone"
+           android:text="Birthday: "
+           android:id="@+id/birthTag"
+           android:textColor="@color/blue500"
+           />
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/birthTag"
+           android:layout_marginTop="9dp"
+           android:textColor="@color/black"
+           android:id="@+id/birthday"
+
+           />
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:text="Birth PLace: "
+           android:visibility="gone"
+
+           android:id="@+id/tagplace"
+           android:layout_marginTop="20dp"
+           android:layout_below="@+id/birthday"
+           android:textColor="@color/blue500"
+           />
+       <TextView
+           android:layout_width="match_parent"
+           android:layout_height="wrap_content"
+           android:layout_below="@+id/tagplace"
+           android:id="@+id/place"
+           android:textColor="@color/black"
+           android:layout_marginTop="9dp"
+           />
+
+   </RelativeLayout>
+
+    <RelativeLayout
+    android:layout_width="match_parent"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/propick"
+    android:layout_height="match_parent">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/tagOvr"
+            android:visibility="gone"
+            android:layout_marginLeft="30dp"
+            android:text="Biography :"
+            android:textColor="@color/blue500"
+            />
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_below="@+id/tagOvr"
+            android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="30dp"
+            android:id="@+id/ovr"
+            />
+        </ScrollView>
+
+
+</RelativeLayout>
+    <fr.castorflex.android.circularprogressbar.CircularProgressBar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        android:id="@+id/smothCirCast"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:visibility="gone"
+        android:indeterminate="true"
+        app:cpb_colors="@array/colorsSmooth"
+        app:cpb_rotation_speed="2.0"
+        app:cpb_sweep_speed="1.0"
+        app:cpb_min_sweep_angle="10"
+        app:cpb_max_sweep_angle="300"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        />
+</RelativeLayout>
+
+
+
+</RelativeLayout>

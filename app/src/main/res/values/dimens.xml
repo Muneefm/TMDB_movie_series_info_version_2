@@ -1,0 +1,45 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+
+    <!-- paper Button attrs -->
+    <dimen name="paper_text_size">20sp</dimen>
+    <color name="paper_text_color">#60000000</color>
+    <color name="paper_button_color">#ffffffff</color>
+    <color name="paper_button_shadow_color">#000000</color>
+    <dimen name="paper_button_corner_radius">2dp</dimen>
+    <dimen name="paper_padding">7dp</dimen>
+
+
+    <dimen name="margin_standard">16dp</dimen>
+    <dimen name="margin_short">8dp</dimen>
+    <dimen name="margin_extra_short">4dp</dimen>
+
+    <dimen name="toolbar_elevation">4dp</dimen>
+
+    <dimen name="toolbar_margin_start">72dp</dimen>
+    <dimen name="flexible_space_height">72dp</dimen>
+    <dimen name="flexible_space_image_height">240dp</dimen>
+    <dimen name="flexible_space_show_fab_offset">120dp</dimen>
+
+    <dimen name="parallax_image_height">230dp</dimen>
+    <dimen name="tab_height">48dp</dimen>
+
+    <dimen name="header_bar_height">72dp</dimen>
+    <dimen name="intersection_height">16dp</dimen>
+
+    <dimen name="sliding_slop">32dp</dimen>
+    <dimen name="sliding_overlay_blur_size">4dp</dimen>
+    <dimen name="navigation_drawer_width">280dp</dimen>
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="app_bar_height">180dp</dimen>
+    <dimen name="text_margin">16dp</dimen>
+    <dimen name="appbar_padding_top">8dp</dimen>
+
+
+    <dimen name="column_width">150dp</dimen>
+
+</resources>
+

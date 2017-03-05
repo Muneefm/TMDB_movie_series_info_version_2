@@ -1,0 +1,126 @@
+<!--<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:paddingTop="@dimen/tab_height">
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:orientation="vertical">
+
+        <android.support.v7.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="?attr/colorPrimary"
+            android:minHeight="?attr/actionBarSize"
+            app:popupTheme="@style/Theme.AppCompat.Light.DarkActionBar"
+            app:theme="@style/Toolbar" />
+
+        <moviez.mnf.com.moviebuzz.Tabs.SlidingTabLayout
+            android:id="@+id/sliding_tabs"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@color/primary" />
+    </LinearLayout>
+
+</FrameLayout>-->
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:openDrawer="start">
+<android.support.design.widget.CoordinatorLayout
+
+    android:id="@+id/coordinatorLayout"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fitsSystemWindows="true">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="?attr/colorPrimary"
+        android:minHeight="?attr/actionBarSize"
+        app:popupTheme="@style/Theme.AppCompat.Light.DarkActionBar"
+        app:theme="@style/Toolbar" />
+   <!-- <moviez.mnf.com.movie.Tabs.SlidingTabLayout
+    android:id="@+id/sliding_tabs"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:elevation="2dp"
+    android:background="@color/teal500"/>
+    <android.support.v4.view.ViewPager
+        android:id="@+id/pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />-->
+    <android.support.design.widget.TabLayout
+        android:id="@+id/tabLayout"
+        android:scrollbars="horizontal"
+        android:layout_below="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:background="@color/teal500"
+        android:layout_height="wrap_content"
+        android:theme="@style/Toolbar"
+        app:layout_scrollFlags="scroll|enterAlways" />
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pager"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </android.support.design.widget.AppBarLayout>
+
+ <!--   <fragment
+
+        android:layout_width="@dimen/navigation_drawer_width"
+        android:layout_height="match_parent"
+        android:id="@+id/navigation_frag"
+        android:layout_gravity="start"
+        android:background="@color/white"
+        app:layout="@layout/fragment_navigation_drawer"
+        android:name="moviez.mnf.com.movie.Fragments.NavigationDrawerFragment"
+        tools:layout="@layout/fragment_navigation_drawer"
+        />-->
+
+    <android.support.design.widget.FloatingActionButton android:id="@+id/fab"
+        android:layout_width="wrap_content" android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end" android:layout_margin="@dimen/fab_margin"
+        android:src="@mipmap/ic_search_two" />
+
+</android.support.design.widget.CoordinatorLayout>
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigation_view"
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
+        android:layout_gravity="start"
+        app:theme="@style/nav"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/drawer"
+        />
+
+
+</android.support.v4.widget.DrawerLayout>

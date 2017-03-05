@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:textColor="@color/white"
+        android:text="Review"
+        android:background="@color/teal"
+        android:fontFamily="sans-serif-condensed"
+
+        android:gravity="center"
+        android:textSize="20dp"
+        android:id="@+id/headRevi"
+        />
+
+
+    <com.github.ksoichiro.android.observablescrollview.ObservableRecyclerView
+        android:layout_width="match_parent"
+        android:id="@+id/revieRec"
+        android:layout_below="@+id/headRevi"
+        android:scrollbars="vertical"
+        android:layout_height="300dp"/>
+
+
+
+</RelativeLayout>

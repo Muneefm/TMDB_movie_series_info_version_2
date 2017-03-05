@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+    android:layout_height="match_parent" android:fitsSystemWindows="true"
+    tools:context="moviez.mnf.com.movie.Activity.AuthenticationActivity">
+
+    <android.support.design.widget.AppBarLayout android:layout_height="wrap_content"
+        android:layout_width="match_parent" android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.v7.widget.Toolbar android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary"
+            app:theme="@style/Toolbar"
+            app:popupTheme="@style/AppTheme.PopupOverlay" />
+        <android.support.design.widget.TabLayout
+            android:id="@+id/tabLayoutAuth"
+            android:scrollbars="horizontal"
+            android:layout_below="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:background="@color/teal500"
+            android:layout_height="wrap_content"
+            android:theme="@style/Toolbar"
+            app:layout_scrollFlags="scroll|enterAlways" />
+        <android.support.v4.view.ViewPager
+            android:id="@+id/pagerAuth"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </android.support.design.widget.AppBarLayout>
+
+    <include layout="@layout/content_authentication" />
+
+
+
+</android.support.design.widget.CoordinatorLayout>

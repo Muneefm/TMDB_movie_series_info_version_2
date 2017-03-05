@@ -1,0 +1,68 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:widget="http://schemas.android.com/apk/res-auto"
+
+    tools:context="moviez.mnf.com.movie.Fragments.LoginFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingBottom="20dp"
+        app:cardBackgroundColor="@color/white"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:paddingTop="200dp"
+        android:layout_centerVertical="true"
+        android:id="@+id/login_card">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_marginTop="40dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_height="wrap_content">
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/id_uname"
+                app:met_primaryColor="@color/pink100"
+                android:hint="Username/email"
+                app:met_floatingLabel="highlight"/>
+            <com.rengwuxian.materialedittext.MaterialEditText
+                android:layout_width="match_parent"
+                app:met_primaryColor="@color/pink100"
+                android:layout_height="wrap_content"
+                android:inputType="textPassword"
+                android:id="@+id/id_password"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/id_uname"
+                android:hint="Password"
+                app:met_floatingLabel="highlight"/>
+
+            <moviez.mnf.com.movie.UI.PaperButton
+            android:layout_width="100dp"
+            android:layout_height="50dp"
+            widget:paper_color="@color/teal500"
+            android:layout_marginTop="10dp"
+                android:id="@+id/id_login_btn"
+            app:paper_text_color="@color/white"
+            android:layout_below="@+id/id_password"
+            android:layout_alignParentRight="true"
+            widget:paper_text="Login"
+            />
+
+        </RelativeLayout>
+
+
+
+
+        </android.support.v7.widget.CardView>
+
+</RelativeLayout>
