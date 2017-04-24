@@ -25,6 +25,8 @@ import com.github.ksoichiro.android.observablescrollview.ObservableScrollView;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks;
 import com.github.ksoichiro.android.observablescrollview.ScrollState;
 import com.github.ksoichiro.android.observablescrollview.ScrollUtils;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.gson.Gson;
 import com.nineoldandroids.view.ViewHelper;
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiscCache;
@@ -105,6 +107,11 @@ public class TvDetailActivity extends ActionBarActivity implements ObservableScr
             Window w = getWindow(); // in Activity's onCreate() for instance
             w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         }
+
+        AdView mAdView = (AdView) findViewById(R.id.adViewTv);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
         titleName = (TextView) findViewById(R.id.nameTV);
         mToolbarView =findViewById(R.id.toolbarTV);
         mImageView = (ImageView) findViewById(R.id.imageTv);

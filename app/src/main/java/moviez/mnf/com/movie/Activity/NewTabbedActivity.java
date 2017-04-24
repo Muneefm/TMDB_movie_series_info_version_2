@@ -27,6 +27,9 @@ import android.view.ViewGroup;
 
 import android.widget.TextView;
 
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
+
 import moviez.mnf.com.movie.Fragments.FragmentInstance;
 import moviez.mnf.com.movie.Fragments.FragmentInstanceTv;
 import moviez.mnf.com.movie.MainActivity;
@@ -67,6 +70,11 @@ public class NewTabbedActivity extends AppCompatActivity implements NavigationVi
         toggle.syncState();
         navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
+
+        AdView mAdView = (AdView) findViewById(R.id.adView);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
         // Create the adapter that will return a fragment for each of the three
         // primary sections of the activity.
         setUpTabMovie();
@@ -95,7 +103,7 @@ public class NewTabbedActivity extends AppCompatActivity implements NavigationVi
         mViewPager = (ViewPager) findViewById(R.id.container);
         mViewPager.setAdapter(mSectionsPagerAdapter);
 
-     TabLayout   tabLayout = (TabLayout) findViewById(R.id.tabs);
+        TabLayout   tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(mViewPager);
     }
 
@@ -138,6 +146,16 @@ public class NewTabbedActivity extends AppCompatActivity implements NavigationVi
             return true;
         }
 
+        if (id == R.id.search) {
+            Intent searchIn = new Intent(NewTabbedActivity.this, SearchActivity.class);
+                searchIn.putExtra("key", "1");
+                startActivity(searchIn);
+                //  Toast.makeText(getApplicationContext()," equal  ",Toast.LENGTH_LONG).show();
+                //searchIn.putExtra("key", "2");
+               // startActivity(searchIn);
+            return true;
+        }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -154,6 +172,9 @@ public class NewTabbedActivity extends AppCompatActivity implements NavigationVi
             Intent searchIn = new Intent(NewTabbedActivity.this, SearchActivity.class);
             searchIn.putExtra("key", "1");
             startActivity(searchIn);
+        }else if(id == R.id.about){
+            Intent authActivity = new Intent(NewTabbedActivity.this, AboutActivity.class);
+            startActivity(authActivity);
         }
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         drawer.closeDrawer(GravityCompat.START);
@@ -200,7 +221,7 @@ public class NewTabbedActivity extends AppCompatActivity implements NavigationVi
      * one of the sections/tabs/pages.
      */
     public class SectionsPagerAdapter extends FragmentStatePagerAdapter {
-        private  final String[] TITLES = new String[]{"Now Running", "Upcoming", "New Release", "Latest"};
+        private  final String[] TITLES = new String[]{"Now Running", "Upcoming", "Popular", "Top Rated"};
 
         public SectionsPagerAdapter(FragmentManager fm) {
             super(fm);

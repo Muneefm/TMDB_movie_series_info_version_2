@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">Movie Buzz</string>
+    <string name="app_name">Movies &amp; Series Info</string>
     <string name="hello_world">Hello world!</string>
     <string name="action_settings">Settings</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
@@ -121,6 +121,13 @@ Quam libero nulla netus eu porta curae, ut nulla bibendum facilisis et urna sed,
     </string>
     <string name="title_activity_new_tabbed">NewTabbedActivity</string>
     <string name="section_format">Hello World from section: %1$d</string>
-    <string name="banner_ad_unit_id">ca-app-pub-3940256099942544/6300978111</string>
+
+
+    <string name="banner_ad_home">ca-app-pub-7269223551241818/2428613883</string>
+
+    <string name="banner_ad_movie">ca-app-pub-7269223551241818/3905347083</string>
+
+    <string name="banner_ad_series">ca-app-pub-7269223551241818/6858813483</string>
+
 
 </resources>

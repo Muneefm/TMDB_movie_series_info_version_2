@@ -96,13 +96,13 @@ public class FragmentInstance extends Fragment implements ObservableScrollViewCa
         Bundle bundle = getArguments();
       //  if(bundle.i!=null) {
             if (bundle.getInt("position") == 0) {
-                BaseUrl = "http://api.themoviedb.org/3/movie/upcoming?api_key=7cf008680165ec352b68dce08866495f";
+                BaseUrl = "http://api.themoviedb.org/3/movie/now_playing?api_key=7cf008680165ec352b68dce08866495f";
             } else if (bundle.getInt("position") == 1) {
-                BaseUrl = "http://api.themoviedb.org/3/movie/popular?api_key=7cf008680165ec352b68dce08866495f"; //"http://api.themoviedb.org/3/movie/now_playing?api_key=7cf008680165ec352b68dce08866495f"
+                BaseUrl = "http://api.themoviedb.org/3/movie/upcoming?api_key=7cf008680165ec352b68dce08866495f"; //"http://api.themoviedb.org/3/movie/now_playing?api_key=7cf008680165ec352b68dce08866495f"
             } else if (bundle.getInt("position") == 2) {
-                BaseUrl = "http://api.themoviedb.org/3/movie/now_playing?api_key=7cf008680165ec352b68dce08866495f";  //"http://api.themoviedb.org/3/movie/popular?api_key=7cf008680165ec352b68dce08866495f"
+                BaseUrl = "http://api.themoviedb.org/3/movie/popular?api_key=7cf008680165ec352b68dce08866495f";  //"http://api.themoviedb.org/3/movie/popular?api_key=7cf008680165ec352b68dce08866495f"
             } else if (bundle.getInt("position") == 3) {
-                BaseUrl = "http://api.themoviedb.org/3/movie/upcoming?api_key=7cf008680165ec352b68dce08866495f"; //"http://api.themoviedb.org/3/movie/top_rated?api_key=7cf008680165ec352b68dce08866495f"
+                BaseUrl = "http://api.themoviedb.org/3/movie/top_rated?api_key=7cf008680165ec352b68dce08866495f"; //"http://api.themoviedb.org/3/movie/top_rated?api_key=7cf008680165ec352b68dce08866495f"
             }
     //    }
         adapter = new ListAdapter(getActivity());

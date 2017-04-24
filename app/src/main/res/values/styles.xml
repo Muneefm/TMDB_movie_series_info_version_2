@@ -19,6 +19,16 @@
     </style>
 
 
+    <style name="AppThemeSearch" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:colorPrimaryDark">@color/teal800</item>
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryDark">@color/primaryDark</item>
+        <item name="colorAccent">@color/red</item>
+
+    </style>
+
+
 
 
     <style name="AppThemeMovieDetail" parent="Theme.AppCompat.Light.NoActionBar">

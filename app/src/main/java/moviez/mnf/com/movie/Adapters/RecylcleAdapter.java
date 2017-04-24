@@ -2,6 +2,7 @@ package moviez.mnf.com.movie.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Typeface;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.text.Html;
@@ -44,6 +45,8 @@ public class RecylcleAdapter extends RecyclerView.Adapter<RecylcleAdapter.ViewHo
         public final RatingBar rate;
         public final CardView cv;
         public final TextView dateR;
+        public final TextView dateTag;
+
         public ViewHolder(View v) {
             super(v);
             viewi = v;
@@ -53,6 +56,8 @@ public class RecylcleAdapter extends RecyclerView.Adapter<RecylcleAdapter.ViewHo
             rate = (RatingBar) v.findViewById(R.id.ratingBar);
             usersC = (TextView) v.findViewById(R.id.userc);
             dateR = (TextView) v.findViewById(R.id.datelist);
+            dateTag = (TextView) v.findViewById(R.id.dateTag);
+
 
 
 
@@ -90,6 +95,11 @@ public class RecylcleAdapter extends RecyclerView.Adapter<RecylcleAdapter.ViewHo
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
 
+        Typeface catamaranFace=Typeface.createFromAsset(c.getAssets(), "fonts/Acme-Regular.ttf");
+        Typeface questrialFace=Typeface.createFromAsset(c.getAssets(), "fonts/Questrial-Regular.ttf");
+
+        holder.text.setTypeface(catamaranFace);
+        holder.dateTag.setTypeface(questrialFace);
 
 
         holder.text.setText(mDataset.get(position).getTitle());
@@ -124,11 +134,12 @@ public class RecylcleAdapter extends RecyclerView.Adapter<RecylcleAdapter.ViewHo
 
         //Toast.makeText(c, "Recycle", Toast.LENGTH_LONG).show();
             if(mDataset.get(position).getReleaseDate()!=null){
+                holder.dateR.setTypeface(questrialFace);
                 holder.dateR.setText(mDataset.get(position).getReleaseDate().toString());
             }
         if(mDataset.get(position).getPosterPath()!=null) {
            // im.displayImage("http://image.tmdb.org/t/p/w500"+mDataset.get(position).getPosterPath().toString(), holder.image);
-            Utils.loadImage(holder.image, mDataset.get(position).getPosterPath().toString(),2);
+            Utils.loadImage(holder.image, mDataset.get(position).getPosterPath().toString(),4);
         }
         if(mDataset.get(position).getVoteAverage()!=null){
           Float ra =   mDataset.get(position).getVoteAverage()/2;

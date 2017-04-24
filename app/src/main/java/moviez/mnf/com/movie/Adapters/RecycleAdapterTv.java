@@ -2,6 +2,8 @@ package moviez.mnf.com.movie.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.support.v7.graphics.Palette;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -10,8 +12,13 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.RatingBar;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
+import com.bumptech.glide.load.engine.DiskCacheStrategy;
+import com.bumptech.glide.request.animation.GlideAnimation;
+import com.bumptech.glide.request.target.SimpleTarget;
 import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 
@@ -35,8 +42,9 @@ public class RecycleAdapterTv extends RecyclerView.Adapter<RecycleAdapterTv.View
         public View viewi;
         public final TextView text;//usersC;
         public final ImageView image;
-        public final RatingBar rate;
+       // public final RatingBar rate;
         public final CardView cv;
+        public final RelativeLayout rlContainer;
 
        // public final TextView dateR;
         public ViewHolder(View v) {
@@ -45,8 +53,8 @@ public class RecycleAdapterTv extends RecyclerView.Adapter<RecycleAdapterTv.View
             cv = (CardView) v.findViewById(R.id.tvcard);
             text = (TextView) v.findViewById(R.id.tvTitle);
             image  = (ImageView) v.findViewById(R.id.tvPoster);
-            rate = (RatingBar) v.findViewById(R.id.tvRate);
-            //usersC = (TextView) v.findViewById(R.id.userc);
+          //  rate = (RatingBar) v.findViewById(R.id.tvRate);
+            rlContainer = (RelativeLayout) v.findViewById(R.id.tag_container);
            // dateR = (TextView) v.findViewById(R.id.datelist);
 
 
@@ -85,18 +93,42 @@ public class RecycleAdapterTv extends RecyclerView.Adapter<RecycleAdapterTv.View
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, final int position) {
+    public void onBindViewHolder(final ViewHolder holder, final int position) {
 
 
         if(mDataset.get(position).getPosterPath()!=null){
             //im.displayImage("http://image.tmdb.org/t/p/w500" + mDataset.get(position).getPosterPath().toString(), holder.image);
-            Utils.loadImage(holder.image,mDataset.get(position).getPosterPath().toString(),3);
+            Utils.loadImage(holder.image,mDataset.get(position).getPosterPath().toString(),4);
+
+            Glide
+                    .with(c)
+                    .load(Config.IMAGE_BASE_URL+"w185"+mDataset.get(position).getPosterPath().toString())
+                    .asBitmap()
+                    .diskCacheStrategy(DiskCacheStrategy.ALL)
+                    // .signature(new StringSignature(String.valueOf(System.currentTimeMillis())))
+
+                    .into(new SimpleTarget<Bitmap>(com.bumptech.glide.request.target.Target.SIZE_ORIGINAL, com.bumptech.glide.request.target.Target.SIZE_ORIGINAL) {
+                        @Override
+                        public void onResourceReady(Bitmap resource, GlideAnimation glideAnimation) {
+                            //holder.moviePoster.setImageBitmap(resource); // Possibly runOnUiThread()
+                            if(holder.rlContainer!=null){
+                                Palette.from(resource).generate(new Palette.PaletteAsyncListener() {
+                                    public void onGenerated(Palette p) {
+                                        // Use generated instance
+                                        holder.rlContainer.setBackgroundColor(p.getDarkVibrantColor(c.getResources().getColor(R.color.grey700)));
+                                        //holder.tvRating.setTextColor(Config.manipulateColor(p.getDarkVibrantColor(mContext.getResources().getColor(R.color.white)),0.9f));
+                                    }
+                                });
+                            }
+                        }
+                    });
+
         }if(mDataset.get(position).getName()!=null){
             holder.text.setText(mDataset.get(position).getName().toString());
         }
         if(mDataset.get(position).getVoteAverage()!=null){
             Float ra = mDataset.get(position).getVoteAverage()/2;
-            holder.rate.setRating(ra);
+            //holder.rate.setRating(ra);
         }
 
         holder.cv.setOnClickListener(new View.OnClickListener() {
@@ -110,6 +142,11 @@ public class RecycleAdapterTv extends RecyclerView.Adapter<RecycleAdapterTv.View
                 c.startActivity(strt);
             }
         });
+
+
+
+
+
 
     }
 

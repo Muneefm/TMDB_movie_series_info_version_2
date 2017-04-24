@@ -138,9 +138,9 @@ public class FragmentInstanceTv extends Fragment implements ObservableScrollView
 
         grid = new GridLayoutManager(getActivity(),columns,GridLayoutManager.VERTICAL,false);
         //lv.addItemDecoration(new SpacesItemDecoration(8));
-        lv.setHasFixedSize(false);
+        lv.setHasFixedSize(true);
         lv.setLayoutManager(mLayoutManager);
-        lv.addItemDecoration(new GridSpacingItemDecoration(2, Utils.dpToPx(2,getActivity()), true));
+        lv.addItemDecoration(new GridSpacingItemDecoration(1, Utils.dpToPx(1,getActivity()), true));
 
 
         lv.setScrollViewCallbacks(this);

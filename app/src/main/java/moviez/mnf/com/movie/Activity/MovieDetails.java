@@ -19,6 +19,7 @@ import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,6 +30,8 @@ import com.github.ksoichiro.android.observablescrollview.ObservableScrollView;
 import com.github.ksoichiro.android.observablescrollview.ObservableScrollViewCallbacks;
 import com.github.ksoichiro.android.observablescrollview.ScrollState;
 import com.github.ksoichiro.android.observablescrollview.ScrollUtils;
+import com.google.android.gms.ads.AdRequest;
+import com.google.android.gms.ads.AdView;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubePlayer;
 import com.google.android.youtube.player.YouTubePlayerView;
@@ -42,6 +45,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.nostra13.universalimageloader.utils.StorageUtils;
+import com.robertlevonyan.views.chip.Chip;
 
 import org.json.JSONObject;
 
@@ -102,8 +106,8 @@ public class MovieDetails extends ActionBarActivity implements ObservableScrollV
     private RecyclerView mRecyclerView,mRecyc,mRecycReview;
     private RecyclerView.Adapter mAdapter;
     private LinearLayoutManager mLayoutManager,mLayoutManagerCast,mLayoutManagerRev;
-
-
+    Chip chip;
+    LinearLayout generContainer;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -127,6 +131,10 @@ public class MovieDetails extends ActionBarActivity implements ObservableScrollV
             Window w = getWindow(); // in Activity's onCreate() for instance
             w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
         }
+        AdView mAdView = (AdView) findViewById(R.id.adViewMovie);
+        AdRequest adRequest = new AdRequest.Builder().build();
+        mAdView.loadAd(adRequest);
+
         //Toast.makeText(getApplicationContext(),"key is = "+key,Toast.LENGTH_LONG).show();
         directedBy = (TextView) findViewById(R.id.directed_tv);
         divideOne = (View) findViewById(R.id.dividerone);
@@ -161,6 +169,7 @@ public class MovieDetails extends ActionBarActivity implements ObservableScrollV
         adapterCrew = new RecycleViewCastCrew(getApplicationContext());
         mRecyc = (RecyclerView) findViewById(R.id.castRec);
         showVideo= (Button) findViewById(R.id.showVideo);
+        generContainer = (LinearLayout) findViewById(R.id.gener_container);
 
         Typeface face=Typeface.createFromAsset(getAssets(), "fonts/FjallaOne-Regular.ttf");
         titleName.setTypeface(face);
@@ -415,17 +424,28 @@ public class MovieDetails extends ActionBarActivity implements ObservableScrollV
                 }
 
                 List<Genre> genres= movieDetails.getGenres();
-                if(genres.size()==1){
+
+                for ( Genre gen:genres) {
+                        chip = new Chip(getApplication());
+                        chip.setChipText(gen.getName());
+
+                        //  chip.setLayoutParams(new LinearLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT,9));
+
+                        generContainer.addView(chip);
+
+                }
+
+              /*  if(genres.size()==1){
                     gen.setText(genres.get(0).getName());
                 }else if(genres.size()==2){
                     gen.setText(genres.get(0).getName()+" | "+genres.get(1).getName());
                 }else if(genres.size()==3){
                     gen.setText(genres.get(0).getName()+" | "+genres.get(1).getName()+" | "+genres.get(2).getName());
                 }
-
+*/
               //  imPoster.displayImage("http://image.tmdb.org/t/p/w500" + movieDetails.getBackdropPath(), mImageView);
                // im.displayImage("http://image.tmdb.org/t/p/w500" + movieDetails.getPosterPath(), poster);
-                Utils.loadImage(mImageView, movieDetails.getBackdropPath(),7);
+                Utils.loadImage(mImageView, movieDetails.getPosterPath(),7);
 //                Utils.loadImage(poster, movieDetails.getPosterPath(),5);
                 mImageView.setOnClickListener(new View.OnClickListener() {
                     @Override

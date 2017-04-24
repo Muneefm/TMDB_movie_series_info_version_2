@@ -6,6 +6,8 @@ import android.text.TextUtils;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.toolbox.Volley;
+import com.google.android.gms.ads.MobileAds;
+import com.google.firebase.analytics.FirebaseAnalytics;
 import com.nostra13.universalimageloader.cache.disc.impl.UnlimitedDiscCache;
 import com.nostra13.universalimageloader.cache.disc.naming.HashCodeFileNameGenerator;
 import com.nostra13.universalimageloader.cache.memory.impl.WeakMemoryCache;
@@ -23,6 +25,7 @@ import java.io.File;
 public class AppController extends Application {
 
     public static final String TAG = AppController.class.getSimpleName();
+    private FirebaseAnalytics mFirebaseAnalytics;
 
     private RequestQueue mRequestQueue;
 
@@ -33,6 +36,8 @@ public class AppController extends Application {
         super.onCreate();
         mInstance = this;
 
+        MobileAds.initialize(getApplicationContext(), "ca-app-pub-7269223551241818~8475147486");
+        mFirebaseAnalytics = FirebaseAnalytics.getInstance(this);
 
 
         File cacheDir = StorageUtils.getCacheDirectory(getApplicationContext(), true);

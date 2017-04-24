@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="moviez.mnf.com.movie.Activity.AboutActivity"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:text="Developed By"
+            android:gravity="center"
+            android:textSize="14dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:text="Muneef M"
+            android:layout_marginTop="10dp"
+            android:textSize="16dp"
+            android:textColor="@android:color/black"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+            android:gravity="center"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:text="http://muneef.me/"
+            android:textSize="16dp"
+            android:autoLink="web"
+            android:layout_marginTop="5dp"
+
+            android:textColor="@android:color/black"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+            android:gravity="center"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:text=" Movie information from"
+            android:gravity="center"
+            android:textSize="14dp"
+            android:layout_marginTop="19dp"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:text="TMDb "
+            android:textSize="16dp"
+            android:layout_marginTop="10dp"
+
+            android:textColor="@android:color/black"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+            android:gravity="center"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:layout_width="match_parent"
+            android:text="https://www.themoviedb.org/"
+            android:textSize="16dp"
+            android:autoLink="web"
+            android:layout_marginTop="5dp"
+
+            android:textColor="@android:color/black"
+            android:textAppearance="@style/Base.TextAppearance.AppCompat.Caption"
+            android:gravity="center"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+</RelativeLayout>

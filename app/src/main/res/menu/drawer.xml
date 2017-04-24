@@ -40,7 +40,20 @@
 -->
     </group>
 
+    <group
+        android:id="@+id/acount_group"
+        android:checkableBehavior="single"
+        >
+        <item android:title="About">
 
+            <item
+                android:id="@+id/about"
+                android:checked="false"
+                android:icon="@mipmap/ic_user"
+                android:title="About" />
+        </item>
+
+    </group>
    <!-- <group
         android:id="@+id/acount_group"
         android:checkableBehavior="single"
