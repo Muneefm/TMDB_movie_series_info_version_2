@@ -30,6 +30,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="@dimen/parallax_image_height"
                 android:minHeight="@dimen/parallax_image_height" />
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -38,7 +39,6 @@
                 android:id="@+id/nameTV"
                 android:layout_alignBottom="@+id/imageTv"
                 android:fontFamily="sans-serif-condensed"
-
                 android:gravity="center"
                 android:paddingTop="10dp"
                 android:textColor="@color/white"

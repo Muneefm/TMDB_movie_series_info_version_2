@@ -44,7 +44,7 @@
                         android:layout_height="wrap_content"
                         android:text="Name"
                         android:textSize="17dp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/grey800"
                         android:id="@+id/movieTitle"
                         />
                 <RatingBar

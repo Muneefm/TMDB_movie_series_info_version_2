@@ -9,8 +9,8 @@ android {
         applicationId "com.mnf.movie"
         minSdkVersion 14
         targetSdkVersion 25
-        versionCode 4
-        versionName "1.4"
+        versionCode 5
+        versionName "1.5"
     }
     buildTypes {
         release {
@@ -52,7 +52,7 @@ dependencies {
     compile 'com.nineoldandroids:library:2.4.0'
     compile 'com.github.castorflex.smoothprogressbar:library-circular:1.0.1'
     compile files('libs/volley.jar')
-    compile files('libs/YouTubeAndroidPlayerApi.jar')
+  //  compile files('libs/YouTubeAndroidPlayerApi.jar')
 
     compile 'com.github.bumptech.glide:glide:3.7.0'
     compile 'com.rengwuxian.materialedittext:library:2.1.4'

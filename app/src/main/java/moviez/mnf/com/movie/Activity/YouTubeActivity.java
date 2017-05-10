@@ -1,8 +1,11 @@
 package moviez.mnf.com.movie.Activity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -27,13 +30,12 @@ import moviez.mnf.com.movie.DataSet.Video.Result;
 import moviez.mnf.com.movie.DataSet.Video.VideoData;
 import moviez.mnf.com.movie.R;
 
-public class YouTubeActivity extends YouTubeBaseActivity implements
-        YouTubePlayer.OnInitializedListener{
+public class YouTubeActivity extends AppCompatActivity {
     List<Result> resultList;
     Gson gson = new Gson();
     VideoData videoData;
     CircularProgressBar smothCirVid;
-    private YouTubePlayerView youTubeView;
+   // private YouTubePlayerView youTubeView;
     private static final int RECOVERY_DIALOG_REQUEST = 1;
     String key;
 
@@ -43,9 +45,11 @@ public class YouTubeActivity extends YouTubeBaseActivity implements
         setContentView(R.layout.activity_you_tube);
         Intent intent = getIntent();
          key = intent.getExtras().getString("id");
-        youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
+      //  youTubeView = (YouTubePlayerView) findViewById(R.id.youtube_view);
         smothCirVid= (CircularProgressBar) findViewById(R.id.smoothCirVid);
         //smoothCirVid
+        //Log.e("TAG","video req url = "+"http://api.themoviedb.org/3/movie/"+key+"/videos?api_key=7cf008680165ec352b68dce08866495f");
+
 
         makeVideoRequest("http://api.themoviedb.org/3/movie/"+key+"/videos?api_key=7cf008680165ec352b68dce08866495f");
 
@@ -64,7 +68,10 @@ public class YouTubeActivity extends YouTubeBaseActivity implements
                 smothCirVid.setVisibility(View.INVISIBLE);
                  resultList= videoData.getResults();
                 if(resultList.size()!=0){
-                    youTubeView.initialize(Config.YOUTUBE_API_KEY, YouTubeActivity.this);
+                   // youTubeView.initialize(Config.YOUTUBE_API_KEY, YouTubeActivity.this);
+                    Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("vnd.youtube://" + resultList.get(0).getKey()));
+                    startActivity(intent);
+                    finish();
                 }
 
                // showDialogueVideo(videoData.getResults());
@@ -111,7 +118,7 @@ public class YouTubeActivity extends YouTubeBaseActivity implements
 
         return super.onOptionsItemSelected(item);
     }
-
+/*
     @Override
     public void onInitializationSuccess(YouTubePlayer.Provider provider, YouTubePlayer youTubePlayer, boolean b) {
         if (!b) {
@@ -131,5 +138,5 @@ public class YouTubeActivity extends YouTubeBaseActivity implements
     }
     private YouTubePlayer.Provider getYouTubePlayerProvider() {
         return (YouTubePlayerView) findViewById(R.id.youtube_view);
-    }
+    }*/
 }

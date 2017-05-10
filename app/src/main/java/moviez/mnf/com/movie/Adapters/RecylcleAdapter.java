@@ -95,10 +95,10 @@ public class RecylcleAdapter extends RecyclerView.Adapter<RecylcleAdapter.ViewHo
     @Override
     public void onBindViewHolder(ViewHolder holder, final int position) {
 
-        Typeface catamaranFace=Typeface.createFromAsset(c.getAssets(), "fonts/Acme-Regular.ttf");
+        Typeface PTSans=Typeface.createFromAsset(c.getAssets(), "fonts/RopaSans-Regular.ttf");
         Typeface questrialFace=Typeface.createFromAsset(c.getAssets(), "fonts/Questrial-Regular.ttf");
 
-        holder.text.setTypeface(catamaranFace);
+        holder.text.setTypeface(PTSans);
         holder.dateTag.setTypeface(questrialFace);
 
 
